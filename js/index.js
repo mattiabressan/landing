@@ -79,8 +79,6 @@ let logViewport = function () {
 	if (isOut.any) {
 		let element = document.getElementById("bar");
         element.classList.add("outofview");
-	} else {
-		console.log('In the viewport! =)');
 	}
 };
 
