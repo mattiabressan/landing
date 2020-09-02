@@ -16,7 +16,7 @@ $("#checkall").click(function(){
 
 
 window.updateCount = function() {
-    var x = $(".z:checked").length;
+    let x = $(".z:checked").length;
     document.getElementById("num").innerHTML = x;
 };
 
@@ -45,19 +45,22 @@ window.addEventListener('scroll', function (event) {
         
 	} else {   
         document.getElementById("bar").style.visibility = 'hidden'
+        let element = document.getElementById("bar");
+        element.classList.add("outofview");
+       
   }
 }, false);
 
 
 
 
-var isOutOfViewport = function (myElement) {
+let isOutOfViewport = function (myElement) {
 
     let bounding = myElement.getBoundingClientRect();
     let myElementHeight = myElement.offsetHeight;
     let myElementWidth = myElement.offsetWidth;
 
-	var out = {};
+	let out = {};
 	out.top = bounding.top < 0;
 	out.left = bounding.left < 0;
 	out.bottom = bounding.bottom > (window.innerHeight || document.documentElement.clientHeight);
@@ -68,11 +71,11 @@ var isOutOfViewport = function (myElement) {
 
 };
 
-var elem = document.querySelector('.container_catalog');
+let elem = document.querySelector('.container_catalog');
 console.log(elem)
 
-var logViewport = function () {
-	var isOut = isOutOfViewport(elem);
+let logViewport = function () {
+	let isOut = isOutOfViewport(elem);
 	if (isOut.any) {
 		let element = document.getElementById("bar");
         element.classList.add("outofview");
